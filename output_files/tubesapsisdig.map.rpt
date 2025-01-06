@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tubesapsisdig
-Mon Jan  6 13:35:48 2025
+Mon Jan  6 13:53:38 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,7 +10,15 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |tubesapsisdig|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +42,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                 ;
-+-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Jan  6 13:35:48 2025              ;
-; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name               ; tubesapsisdig                                  ;
-; Top-level Entity Name       ; tubesapsisdig                                  ;
-; Family                      ; Cyclone V                                      ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
-; Total registers             ; N/A until Partition Merge                      ;
-; Total pins                  ; N/A until Partition Merge                      ;
-; Total virtual pins          ; N/A until Partition Merge                      ;
-; Total block memory bits     ; N/A until Partition Merge                      ;
-; Total PLLs                  ; N/A until Partition Merge                      ;
-; Total DLLs                  ; N/A until Partition Merge                      ;
-+-----------------------------+------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Jan  6 13:53:38 2025          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; tubesapsisdig                                  ;
+; Top-level Entity Name           ; tubesapsisdig                                  ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 36                                             ;
+; Total pins                      ; 8                                              ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -148,11 +161,131 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; tubesapsisdig.v                  ; yes             ; User Verilog HDL File  ; D:/file code/quartus prime/tubesapsisdig1/tubesapsisdig.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 22          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 41          ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 2           ;
+;     -- 5 input functions                    ; 2           ;
+;     -- 4 input functions                    ; 1           ;
+;     -- <=3 input functions                  ; 36          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 36          ;
+;                                             ;             ;
+; I/O pins                                    ; 8           ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; LessThan0~5 ;
+; Maximum fan-out                             ; 36          ;
+; Total fan-out                               ; 254         ;
+; Average fan-out                             ; 2.73        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; |tubesapsisdig             ; 41 (41)             ; 36 (36)                   ; 0                 ; 0          ; 8    ; 0            ; |tubesapsisdig      ; tubesapsisdig ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |tubesapsisdig|state                                                            ;
++-------------------+-------------------+------------------+-------------------+------------------+
+; Name              ; state.SIDE_YELLOW ; state.SIDE_GREEN ; state.MAIN_YELLOW ; state.MAIN_GREEN ;
++-------------------+-------------------+------------------+-------------------+------------------+
+; state.MAIN_GREEN  ; 0                 ; 0                ; 0                 ; 0                ;
+; state.MAIN_YELLOW ; 0                 ; 0                ; 1                 ; 1                ;
+; state.SIDE_GREEN  ; 0                 ; 1                ; 0                 ; 1                ;
+; state.SIDE_YELLOW ; 1                 ; 0                ; 0                 ; 1                ;
++-------------------+-------------------+------------------+-------------------+------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; state~4                               ; Lost fanout        ;
+; state~5                               ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 36    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 36    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 36                          ;
+;     CLR SCLR          ; 32                          ;
+;     ENA CLR           ; 4                           ;
+; arriav_lcell_comb     ; 43                          ;
+;     arith             ; 32                          ;
+;         1 data inputs ; 32                          ;
+;     normal            ; 11                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 2                           ;
+;         6 data inputs ; 2                           ;
+; boundary_port         ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.92                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,24 +294,25 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Jan  6 13:35:41 2025
+    Info: Processing started: Mon Jan  6 13:53:32 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tubesapsisdig -c tubesapsisdig
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file tubesapsisdig.v
     Info (12023): Found entity 1: tubesapsisdig File: D:/file code/quartus prime/tubesapsisdig1/tubesapsisdig.v Line: 1
 Info (12127): Elaborating entity "tubesapsisdig" for the top level hierarchy
-Error (10200): Verilog HDL Conditional Statement error at tubesapsisdig.v(26): cannot match operand(s) in the condition to the corresponding edges in the enclosing event control of the always construct File: D:/file code/quartus prime/tubesapsisdig1/tubesapsisdig.v Line: 26
-Warning (10240): Verilog HDL Always Construct warning at tubesapsisdig.v(25): inferring latch(es) for variable "state", which holds its previous value in one or more paths through the always construct File: D:/file code/quartus prime/tubesapsisdig1/tubesapsisdig.v Line: 25
-Info (10041): Inferred latch for "state.SIDE_YELLOW" at tubesapsisdig.v(25) File: D:/file code/quartus prime/tubesapsisdig1/tubesapsisdig.v Line: 25
-Info (10041): Inferred latch for "state.SIDE_GREEN" at tubesapsisdig.v(25) File: D:/file code/quartus prime/tubesapsisdig1/tubesapsisdig.v Line: 25
-Info (10041): Inferred latch for "state.MAIN_YELLOW" at tubesapsisdig.v(25) File: D:/file code/quartus prime/tubesapsisdig1/tubesapsisdig.v Line: 25
-Info (10041): Inferred latch for "state.MAIN_GREEN" at tubesapsisdig.v(25) File: D:/file code/quartus prime/tubesapsisdig1/tubesapsisdig.v Line: 25
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 2 warnings
-    Error: Peak virtual memory: 4774 megabytes
-    Error: Processing ended: Mon Jan  6 13:35:48 2025
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:09
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 51 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 6 output pins
+    Info (21061): Implemented 43 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4864 megabytes
+    Info: Processing ended: Mon Jan  6 13:53:38 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:09
 
 

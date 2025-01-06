@@ -1,8 +1,6 @@
 module tubesapsisdig (
     input wire clk,          // Clock input
     input wire reset,        // Reset signal (active high)
-    input wire vcc,          // Power supply (logic high)
-    input wire gnd,          // Ground (logic low)
     output reg [2:0] light_main,  // Main road traffic light (R-Y-G)
     output reg [2:0] light_side   // Side road traffic light (R-Y-G)
 );
@@ -23,7 +21,7 @@ module tubesapsisdig (
 
     // State transition logic (sequential)
     always @(posedge clk or posedge reset) begin
-        if (reset == vcc) begin
+        if (reset) begin
             state <= MAIN_GREEN;
             timer <= 0;
         end else begin
