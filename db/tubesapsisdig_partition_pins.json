@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "light_main[0]",
+					"strict" : false
+				},
+				{
+					"name" : "light_main[1]",
+					"strict" : false
+				},
+				{
+					"name" : "light_main[2]",
+					"strict" : false
+				},
+				{
+					"name" : "light_side[0]",
+					"strict" : false
+				},
+				{
+					"name" : "light_side[1]",
+					"strict" : false
+				},
+				{
+					"name" : "light_side[2]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

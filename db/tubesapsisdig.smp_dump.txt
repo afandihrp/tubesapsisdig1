@@ -1,0 +1,7 @@
+
+State Machine - |tubesapsisdig|state
+Name state.SIDE_YELLOW state.SIDE_GREEN state.MAIN_YELLOW state.MAIN_GREEN 
+state.MAIN_GREEN 0 0 0 0 
+state.MAIN_YELLOW 0 0 1 1 
+state.SIDE_GREEN 0 1 0 1 
+state.SIDE_YELLOW 1 0 0 1 
